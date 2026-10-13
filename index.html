@@ -1,0 +1,3871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Bryan Pedro - IT Support Specialist specializing in IT support, Microsoft 365, networking, Active Directory, troubleshooting and end-user support."
+    >
+
+    <meta
+        name="author"
+        content="Bryan Pedro"
+    >
+
+    <title>Bryan Pedro | IT Support Specialist</title>
+
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+
+            --bg: #050b14;
+            --bg-2: #08111f;
+            --bg-3: #0b1626;
+
+            --card: rgba(13, 25, 43, 0.72);
+
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+
+            --secondary: #6366f1;
+
+            --text: #f8fafc;
+            --text-light: #e2e8f0;
+
+            --muted: #94a3b8;
+            --muted-2: #64748b;
+
+            --border: rgba(148, 163, 184, 0.14);
+
+            --success: #4ade80;
+
+            --max-width: 1180px;
+
+            --radius: 18px;
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        html {
+
+            scroll-padding-top: 90px;
+
+        }
+
+
+        body {
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(56, 189, 248, 0.09),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(99, 102, 241, 0.09),
+                    transparent 25%
+                ),
+
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
+            z-index: -1;
+
+        }
+
+
+        ::selection {
+
+            background: var(--primary);
+
+            color: #00111c;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+
+        }
+
+
+        button {
+
+            font: inherit;
+
+        }
+
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--max-width)
+                );
+
+            margin: auto;
+
+        }
+
+
+        /* =========================================================
+           SCROLLBAR
+        ========================================================= */
+
+        ::-webkit-scrollbar {
+
+            width: 9px;
+
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background: #020617;
+
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #1e40af;
+
+            border-radius: 20px;
+
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background: var(--primary);
+
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 999;
+
+            background:
+                rgba(5, 11, 20, 0.76);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.06);
+
+        }
+
+
+        nav {
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .logo {
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
+        }
+
+
+        .logo span {
+
+            color: var(--primary);
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-links a {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--primary);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+        .nav-button {
+
+            padding:
+                9px 16px;
+
+            border:
+                1px solid
+                rgba(56,189,248,0.30);
+
+            border-radius: 9px;
+
+            color:
+                var(--primary) !important;
+
+        }
+
+
+        .nav-button::after {
+
+            display: none;
+
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            background: transparent;
+
+            border: none;
+
+            color: white;
+
+            font-size: 27px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding:
+                140px 0 90px;
+
+            position: relative;
+
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            top: 10%;
+
+            right: -180px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(56,189,248,0.10);
+
+            filter: blur(100px);
+
+            pointer-events: none;
+
+        }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.15fr 0.85fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+        }
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 30px;
+
+            height: 2px;
+
+            background: var(--primary);
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(50px, 7vw, 84px);
+
+            line-height: 0.96;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .hero h1 span {
+
+            display: block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #818cf8
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .hero-subtitle {
+
+            color: var(--text-light);
+
+            font-size: 23px;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                13px 21px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border .3s ease;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    #2563eb
+                );
+
+            color: white;
+
+            box-shadow:
+                0 12px 35px
+                rgba(37,99,235,0.23);
+
+        }
+
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(37,99,235,0.35);
+
+        }
+
+
+        .btn-outline {
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid
+                var(--border);
+
+            color: white;
+
+        }
+
+
+        .btn-outline:hover {
+
+            transform:
+                translateY(-3px);
+
+            color:
+                var(--primary);
+
+            border-color:
+                rgba(56,189,248,0.50);
+
+        }
+
+
+        /* DOWNLOAD BUTTON */
+
+        .download-btn {
+
+            border-color:
+                rgba(56,189,248,0.35);
+
+            color:
+                var(--primary);
+
+        }
+
+
+        .download-btn:hover {
+
+            background:
+                rgba(56,189,248,0.08);
+
+            color: white;
+
+        }
+
+
+        /* =========================================================
+           PROFILE CARD
+        ========================================================= */
+
+        .profile-area {
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+
+        .profile-card {
+
+            width:
+                min(370px, 100%);
+
+            padding: 30px;
+
+            position: relative;
+
+            border:
+                1px solid
+                rgba(56,189,248,0.20);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(15,31,52,0.94),
+                    rgba(7,17,31,0.88)
+                );
+
+            box-shadow:
+                0 35px 80px
+                rgba(0,0,0,0.38);
+
+            overflow: hidden;
+
+        }
+
+
+        .profile-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            top: -90px;
+            right: -60px;
+
+            background:
+                var(--primary);
+
+            opacity: .10;
+
+            filter: blur(55px);
+
+            border-radius: 50%;
+
+        }
+
+
+        .profile-image-wrapper {
+
+            width: 185px;
+
+            height: 215px;
+
+            margin:
+                0 auto 25px;
+
+            padding: 5px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    #4f46e5
+                );
+
+        }
+
+
+        .profile-image {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius: 16px;
+
+            background: #111827;
+
+        }
+
+
+        .profile-info {
+
+            text-align: center;
+
+        }
+
+
+        .profile-info h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        .profile-info p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+        .availability {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 18px;
+
+            color: #86efac;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background:
+                var(--success);
+
+            box-shadow:
+                0 0 12px
+                rgba(74,222,128,0.8);
+
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+
+            padding: 110px 0;
+
+        }
+
+
+        .section-heading {
+
+            max-width: 720px;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .section-label {
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-size:
+                clamp(32px, 5vw, 46px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .section-heading p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-section {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(9,19,33,0.70),
+                    rgba(5,11,20,0.50)
+                );
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.04);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.04);
+
+        }
+
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
+            gap: 70px;
+
+            align-items: start;
+
+        }
+
+
+        .about-text p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            margin-bottom: 19px;
+
+        }
+
+
+        .about-highlight {
+
+            margin-top: 28px;
+
+            padding:
+                20px 22px;
+
+            border-left:
+                3px solid
+                var(--primary);
+
+            background:
+                rgba(56,189,248,0.045);
+
+            border-radius:
+                0 12px 12px 0;
+
+        }
+
+
+        .about-highlight strong {
+
+            display: block;
+
+            color: white;
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .about-highlight span {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .stat {
+
+            padding: 25px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 16px;
+
+            background:
+                rgba(15,28,47,0.55);
+
+            transition: .3s ease;
+
+        }
+
+
+        .stat:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(56,189,248,0.30);
+
+        }
+
+
+        .stat-number {
+
+            color:
+                var(--primary);
+
+            font-size: 32px;
+
+            font-weight: 800;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .stat-title {
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        .stat-desc {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .skill-card {
+
+            padding: 27px;
+
+            position: relative;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17,31,51,0.72),
+                    rgba(9,20,35,0.62)
+                );
+
+            overflow: hidden;
+
+            transition:
+                transform .35s ease,
+                border .35s ease,
+                box-shadow .35s ease;
+
+        }
+
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(56,189,248,0.35);
+
+            box-shadow:
+                0 18px 45px
+                rgba(0,0,0,0.22);
+
+        }
+
+
+        .skill-icon {
+
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 13px;
+
+            background:
+                rgba(56,189,248,0.08);
+
+            border:
+                1px solid
+                rgba(56,189,248,0.13);
+
+            font-size: 22px;
+
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .skill-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        .skill-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 17px;
+
+        }
+
+
+        .tag {
+
+            padding:
+                5px 9px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            color:
+                #a9bdd2;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience-section {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(9,19,33,0.70),
+                    rgba(5,11,20,0.65)
+                );
+
+        }
+
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 980px;
+
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 7px;
+
+            top: 10px;
+
+            bottom: 10px;
+
+            width: 1px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--primary),
+                    rgba(56,189,248,0.06)
+                );
+
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 45px;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .timeline-item:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .timeline-dot {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 7px;
+
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+
+            background:
+                var(--primary);
+
+            box-shadow:
+
+                0 0 0 5px
+                rgba(56,189,248,0.10),
+
+                0 0 20px
+                rgba(56,189,248,0.35);
+
+        }
+
+
+        .timeline-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .timeline-item h3 {
+
+            font-size: 20px;
+
+            color: white;
+
+        }
+
+
+        .timeline-company {
+
+            color:
+                var(--primary);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .timeline-date {
+
+            color:
+                var(--muted-2);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+        }
+
+
+        .timeline-item > p {
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .responsibilities {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+        }
+
+
+        .responsibility {
+
+            padding:
+                6px 10px;
+
+            border-radius: 7px;
+
+            color:
+                #b9c8d8;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================================
+           SUB ROLE
+        ========================================================= */
+
+        .sub-role {
+
+            margin-top: 26px;
+
+            padding:
+                21px 23px;
+
+            border-left:
+                2px solid
+                rgba(56,189,248,0.40);
+
+            border-radius:
+                0 14px 14px 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(56,189,248,0.055),
+                    rgba(56,189,248,0.012)
+                );
+
+        }
+
+
+        .sub-role-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color:
+                var(--text-light);
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .sub-role-title::before {
+
+            content: "↳";
+
+            color:
+                var(--primary);
+
+            font-size: 18px;
+
+        }
+
+
+        .sub-role p {
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .service-card {
+
+            padding: 28px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 17px;
+
+            background:
+                rgba(13,25,43,0.62);
+
+            transition: .3s ease;
+
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(56,189,248,0.35);
+
+        }
+
+
+        .service-number {
+
+            color:
+                rgba(56,189,248,0.60);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .service-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .service-card p {
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
+
+        .credentials {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(9,19,33,0.70),
+                    rgba(5,11,20,0.65)
+                );
+
+        }
+
+
+        .credentials-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        .credential-box {
+
+            padding: 30px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            background:
+                rgba(13,25,43,0.60);
+
+        }
+
+
+        .credential-box h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .education-item {
+
+            padding:
+                17px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.06);
+
+        }
+
+
+        .education-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .education-item strong {
+
+            display: block;
+
+            color: white;
+
+            font-size: 14px;
+
+        }
+
+
+        .education-item span {
+
+            display: block;
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 3px;
+
+        }
+
+
+        .education-year {
+
+            color:
+                var(--primary) !important;
+
+            font-weight: 700;
+
+        }
+
+
+        .cert-list {
+
+            list-style: none;
+
+        }
+
+
+        .cert-list li {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding:
+                15px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            color:
+                var(--text-light);
+
+            font-size: 14px;
+
+        }
+
+
+        .cert-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .cert-icon {
+
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(56,189,248,0.08);
+
+            color:
+                var(--primary);
+
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-section {
+
+            padding-bottom: 80px;
+
+        }
+
+
+        .contact-card {
+
+            position: relative;
+
+            padding:
+                65px 40px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(56,189,248,0.18);
+
+            border-radius: 25px;
+
+            background:
+
+                radial-gradient(
+                    circle at top left,
+                    rgba(56,189,248,0.10),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    145deg,
+                    rgba(17,32,53,0.85),
+                    rgba(7,17,30,0.85)
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .contact-card h2 {
+
+            position: relative;
+
+            font-size:
+                clamp(30px,5vw,45px);
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .contact-card > p {
+
+            position: relative;
+
+            max-width: 620px;
+
+            margin:
+                0 auto 30px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+        .contact-details {
+
+            position: relative;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .contact-item {
+
+            padding:
+                10px 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            color:
+                var(--text-light);
+
+            font-size: 12px;
+
+        }
+
+
+        .contact-item a:hover {
+
+            color:
+                var(--primary);
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding:
+                27px 0;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.05);
+
+            color:
+                var(--muted-2);
+
+            font-size: 12px;
+
+            text-align: center;
+
+        }
+
+
+        footer strong {
+
+            color:
+                var(--muted);
+
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        .top-button {
+
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+
+            place-items: center;
+
+            border:
+                1px solid
+                rgba(56,189,248,0.25);
+
+            border-radius: 11px;
+
+            background:
+                rgba(7,17,30,0.90);
+
+            color:
+                var(--primary);
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .3s;
+
+            z-index: 500;
+
+        }
+
+
+        .top-button.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        .top-button:hover {
+
+            background:
+                var(--primary);
+
+            color:
+                #03101b;
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE TABLET
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .hero-grid,
+            .about-grid,
+            .credentials-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding-top: 125px;
+
+            }
+
+
+            .profile-area {
+
+                order: -1;
+
+            }
+
+
+            .profile-card {
+
+                width: 340px;
+
+            }
+
+
+            .skills-grid,
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE MOBILE
+        ========================================================= */
+
+        @media (max-width: 720px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 30px),
+                        var(--max-width)
+                    );
+
+            }
+
+
+            section {
+
+                padding: 80px 0;
+
+            }
+
+
+            .menu-btn {
+
+                display: block;
+
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 76px;
+
+                left: 15px;
+                right: 15px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px;
+
+                border:
+                    1px solid
+                    var(--border);
+
+                border-radius: 15px;
+
+                background:
+                    rgba(7,17,30,0.97);
+
+                backdrop-filter:
+                    blur(20px);
+
+            }
+
+
+            .nav-links.open {
+
+                display: flex;
+
+            }
+
+
+            .nav-links li a {
+
+                display: block;
+
+                padding: 12px;
+
+                border-radius: 8px;
+
+            }
+
+
+            .nav-links li a:hover {
+
+                background:
+                    rgba(56,189,248,0.06);
+
+            }
+
+
+            .nav-button {
+
+                text-align: center;
+
+                margin-top: 5px;
+
+            }
+
+
+            .hero {
+
+                text-align: center;
+
+            }
+
+
+            .eyebrow {
+
+                justify-content: center;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -2.5px;
+
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+            }
+
+
+            .hero-buttons {
+
+                justify-content: center;
+
+            }
+
+
+            .skills-grid,
+            .services-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .timeline-header {
+
+                display: block;
+
+            }
+
+
+            .timeline-date {
+
+                display: block;
+
+                margin-top: 3px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+
+                font-size: 47px;
+
+            }
+
+
+            .hero-subtitle {
+
+                font-size: 20px;
+
+            }
+
+
+            .profile-card {
+
+                width: 100%;
+
+            }
+
+
+            .contact-card {
+
+                padding:
+                    45px 20px;
+
+            }
+
+
+            .stats-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header>
+
+    <nav class="container">
+
+        <a
+            href="#home"
+            class="logo"
+        >
+            Bryan<span>.</span>
+        </a>
+
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+
+        <ul
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#experience">
+                    Experience
+                </a>
+            </li>
+
+            <li>
+                <a href="#credentials">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="container hero-grid">
+
+
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">
+                HELLO, I'M
+            </div>
+
+
+            <h1>
+
+                Bryan
+
+                <span>
+                    Pedro
+                </span>
+
+            </h1>
+
+
+            <div class="hero-subtitle">
+
+                Administrative Assistant & IT Specialist
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Experienced administrative and IT professional with a strong passion
+                for delivering reliable technical solutions, system management,
+                and administrative support. Skilled in Salesforce, Microsoft 365,
+                Google Workspace, Active Directory, workflow automation, and IT operations.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <!-- CONNECT -->
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary"
+                >
+                    Let's Connect →
+                </a>
+
+
+                <!-- EXPERIENCE -->
+
+                <a
+                    href="#experience"
+                    class="btn btn-outline"
+                >
+                    View Experience
+                </a>
+
+
+                <!-- =================================================
+                     DOWNLOAD CV
+                ================================================== -->
+
+                <a
+                    href="./Bryan-Pedro-CV.pdf"
+                    download="Bryan-Pedro-CV.pdf"
+                    class="btn btn-outline download-btn"
+                >
+                    📄 Download CV
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-area reveal">
+
+            <div class="profile-card">
+
+
+                <div class="profile-image-wrapper">
+
+                    <img
+                        src="./2x2.jpg"
+                        alt="Bryan Pedro"
+                        class="profile-image"
+                    >
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <h2>
+                        Bryan Pedro
+                    </h2>
+
+
+                    <p>
+                        Administrative Assistant & IT Specialist
+                    </p>
+
+
+                    <div class="availability">
+
+                        <span class="status-dot"></span>
+
+                        Open to IT Opportunities
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                ABOUT ME
+            </div>
+
+
+            <h2>
+                Reliable support.
+                Practical solutions.
+            </h2>
+
+
+            <p>
+                A hands-on professional focused on keeping
+                administrative workflows, systems, devices and business operations
+                running smoothly.
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+
+                    I am an experienced professional combining administrative expertise
+                    with a strong background in technical support,
+                    desktop operations, and system management.
+
+                </p>
+
+
+                <p>
+
+                    My experience includes managing CRM platforms like Salesforce, handling business workflows,
+                    supporting users through Microsoft 365 and Google Workspace, resolving technical incidents,
+                    and maintaining efficient office operations.
+
+                </p>
+
+
+                <p>
+
+                    I am comfortable working in fast-paced
+                    environments where clear communication,
+                    problem solving, attention to detail and
+                    dependable administrative and IT support are essential.
+
+                </p>
+
+
+                <div class="about-highlight">
+
+                    <strong>
+                        My approach to support
+                    </strong>
+
+
+                    <span>
+
+                        I focus on finding root causes, optimizing workflows, and keeping business operations running smoothly with minimal downtime.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stats-grid reveal">
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        7+
+                    </div>
+
+                    <div class="stat-title">
+                        Years of Experience
+                    </div>
+
+                    <div class="stat-desc">
+                        Admin support & IT operations
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        1K+
+                    </div>
+
+                    <div class="stat-title">
+                        BPO Workstations
+                    </div>
+
+                    <div class="stat-desc">
+                        Supported in an active environment
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        365
+                    </div>
+
+                    <div class="stat-title">
+                        Microsoft 365
+                    </div>
+
+                    <div class="stat-desc">
+                        User and account support
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        3
+                    </div>
+
+                    <div class="stat-title">
+                        IT Certifications
+                    </div>
+
+                    <div class="stat-desc">
+                        CompTIA & ITIL
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                TECHNICAL & ADMIN EXPERTISE
+            </div>
+
+
+            <h2>
+                Skills & Technologies
+            </h2>
+
+
+            <p>
+                Core capabilities spanning administrative workflows, enterprise software, and IT operations.
+            </p>
+
+        </div>
+
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Administrative Support
+                </h3>
+
+                <p>
+                    Managing office tasks, documentation, data entry, client communications, and daily workflow organization.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Admin Assistance
+                    </span>
+
+                    <span class="tag">
+                        Documentation
+                    </span>
+
+                    <span class="tag">
+                        Workflow Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    Enterprise Software & CRM
+                </h3>
+
+                <p>
+                    Utilizing and managing productivity and business tools including Salesforce, Microsoft 365, and Google Workspace.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Salesforce CRM
+                    </span>
+
+                    <span class="tag">
+                        Microsoft 365
+                    </span>
+
+                    <span class="tag">
+                        Google Workspace
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    IT Support & Helpdesk
+                </h3>
+
+                <p>
+                    Desktop and end-user support including hardware, software, operating systems, and technical troubleshooting.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Desktop Support
+                    </span>
+
+                    <span class="tag">
+                        Helpdesk
+                    </span>
+
+                    <span class="tag">
+                        Troubleshooting
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Active Directory & Access
+                </h3>
+
+                <p>
+                    User account management, permissions, MFA setup, and directory administration in business environments.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Active Directory
+                    </span>
+
+                    <span class="tag">
+                        MFA Setup
+                    </span>
+
+                    <span class="tag">
+                        User Accounts
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🎫
+                </div>
+
+                <h3>
+                    Ticketing & Project Tools
+                </h3>
+
+                <p>
+                    Handling support tickets, project tracking platforms, and documenting operational issues through resolution.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Freshdesk
+                    </span>
+
+                    <span class="tag">
+                        Jira
+                    </span>
+
+                    <span class="tag">
+                        Zoho
+                    </span>
+
+                    <span class="tag">
+                        Salesforce Service Cloud
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    System Deployment
+                </h3>
+
+                <p>
+                    Software deployment, re-imaging, workstation configuration, maintenance, and device preparation.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span class="tag">
+                        Re-imaging
+                    </span>
+
+                    <span class="tag">
+                        PDQ
+                    </span>
+
+                    <span class="tag">
+                        Smart Deploy
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section
+    class="experience-section"
+    id="experience"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                CAREER JOURNEY
+            </div>
+
+
+            <h2>
+                Professional Experience
+            </h2>
+
+
+            <p>
+                Hands-on experience across administrative support, enterprise software management, technical operations, and end-user assistance.
+            </p>
+
+        </div>
+
+
+
+        <div class="timeline">
+
+
+            <!-- SALVO PROPERTY GROUP -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-header">
+
+                    <div>
+
+                        <h3>
+                            Administrative Assistant & IT Specialist
+                        </h3>
+
+                        <div class="timeline-company">
+                            Salvo Property Group
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-date">
+                        July 9, 2025 – Present
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Providing comprehensive administrative support and specialized technical solutions 
+                    utilizing enterprise tools like Salesforce and Microsoft 365 to streamline internal operations, 
+                    manage digital workflows, and maintain reliable IT infrastructure.
+                </p>
+
+
+                <div class="responsibilities">
+
+                    <span class="responsibility">
+                        Administrative Support
+                    </span>
+
+                    <span class="responsibility">
+                        Salesforce CRM Management
+                    </span>
+
+                    <span class="responsibility">
+                        Microsoft 365 & Google Workspace
+                    </span>
+
+                    <span class="responsibility">
+                        IT Specialist Operations
+                    </span>
+
+                    <span class="responsibility">
+                        Workflow Management
+                    </span>
+
+                    <span class="responsibility">
+                        System & Software Support
+                    </span>
+
+                    <span class="responsibility">
+                        Technical Troubleshooting
+                    </span>
+
+                    <span class="responsibility">
+                        Internal Communication
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- IQOR -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-header">
+
+                    <div>
+
+                        <h3>
+                            Desktop Support Technician II
+                        </h3>
+
+                        <div class="timeline-company">
+                            iQor
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-date">
+                        April 26, 2023 – October 24, 2025
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Provided technical support for end users
+                    and business operations, handling daily IT
+                    incidents, workstation issues, software
+                    deployment, security-related tasks and
+                    system maintenance.
+                </p>
+
+
+                <div class="responsibilities">
+
+                    <span class="responsibility">
+                        IT / Technical Support
+                    </span>
+
+                    <span class="responsibility">
+                        Helpdesk Operations
+                    </span>
+
+                    <span class="responsibility">
+                        Hardware Troubleshooting
+                    </span>
+
+                    <span class="responsibility">
+                        Software Troubleshooting
+                    </span>
+
+                    <span class="responsibility">
+                        PDQ / Smart Deploy
+                    </span>
+
+                    <span class="responsibility">
+                        Active Directory
+                    </span>
+
+                    <span class="responsibility">
+                        MFA Setup
+                    </span>
+
+                    <span class="responsibility">
+                        Security Troubleshooting
+                    </span>
+
+                    <span class="responsibility">
+                        Asset Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SHORE360 -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-header">
+
+                    <div>
+
+                        <h3>
+                            IT Specialist
+                        </h3>
+
+                        <div class="timeline-company">
+                            Shore360 Inc.
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-date">
+                        September 30, 2019 – April 17, 2023
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Provided technical support for computer
+                    hardware, operating systems, software and
+                    end users while performing system maintenance,
+                    troubleshooting, onboarding preparation,
+                    hardware replacement and day-to-day IT support.
+                </p>
+
+
+                <div class="responsibilities">
+
+                    <span class="responsibility">
+                        Computer Hardware
+                    </span>
+
+                    <span class="responsibility">
+                        Operating Systems
+                    </span>
+
+                    <span class="responsibility">
+                        Desktop Support
+                    </span>
+
+                    <span class="responsibility">
+                        Hardware Repair
+                    </span>
+
+                    <span class="responsibility">
+                        User Support
+                    </span>
+
+                    <span class="responsibility">
+                        Account Creation
+                    </span>
+
+                    <span class="responsibility">
+                        Network Re-imaging
+                    </span>
+
+                    <span class="responsibility">
+                        New Employee Setup
+                    </span>
+
+                </div>
+
+
+
+                <div class="sub-role">
+
+                    <div class="sub-role-title">
+                        Ad Hoc IT Support
+                    </div>
+
+
+                    <p>
+                        Handled additional on-demand IT support
+                        responsibilities within Shore360, including
+                        desktop support, customer assistance,
+                        technical troubleshooting, responding to
+                        technical concerns, and following up on
+                        reported issues until they were resolved.
+                    </p>
+
+
+                    <div class="responsibilities">
+
+                        <span class="responsibility">
+                            Desktop Support
+                        </span>
+
+                        <span class="responsibility">
+                            Technical Support
+                        </span>
+
+                        <span class="responsibility">
+                            Customer Assistance
+                        </span>
+
+                        <span class="responsibility">
+                            Troubleshooting
+                        </span>
+
+                        <span class="responsibility">
+                            Issue Follow-up
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RESOURCEFUL -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-header">
+
+                    <div>
+
+                        <h3>
+                            IT Support
+                        </h3>
+
+                        <div class="timeline-company">
+                            Resourceful Corp
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-date">
+                        May 14, 2019 – August 30, 2019
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Provided technical support for computer
+                    hardware, operating systems, software issues,
+                    user accounts and network-related problems.
+                </p>
+
+
+                <div class="responsibilities">
+
+                    <span class="responsibility">
+                        Hardware Support
+                    </span>
+
+                    <span class="responsibility">
+                        Software Support
+                    </span>
+
+                    <span class="responsibility">
+                        Operating Systems
+                    </span>
+
+                    <span class="responsibility">
+                        Network Troubleshooting
+                    </span>
+
+                    <span class="responsibility">
+                        User Accounts
+                    </span>
+
+                    <span class="responsibility">
+                        Ticket Management
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                WHAT I CAN DO
+            </div>
+
+
+            <h2>
+                Administrative & IT Solutions
+            </h2>
+
+
+            <p>
+                Practical administrative and technical services built around
+                reliability, organization, and efficient workflows.
+            </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    01 / ADMIN
+                </div>
+
+                <h3>
+                    Administrative Support
+                </h3>
+
+                <p>
+                    Manage office workflows, documentation, data organization, and daily administrative tasks efficiently.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    02 / CRM & CLOUD
+                </div>
+
+                <h3>
+                    Software & CRM Management
+                </h3>
+
+                <p>
+                    Handle enterprise software platforms including Salesforce, Microsoft 365, and Google Workspace.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    03 / SUPPORT
+                </div>
+
+                <h3>
+                    End-User Support
+                </h3>
+
+                <p>
+                    Assist users with hardware, software,
+                    account, operating system and general
+                    technical issues through remote or
+                    on-site support.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    04 / SYSTEMS
+                </div>
+
+                <h3>
+                    Workstation Management
+                </h3>
+
+                <p>
+                    Prepare, configure, re-image, maintain
+                    and troubleshoot computers used in
+                    business environments.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    05 / NETWORK
+                </div>
+
+                <h3>
+                    Network Troubleshooting
+                </h3>
+
+                <p>
+                    Diagnose connectivity and network-related
+                    problems affecting users, devices and
+                    business operations.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    06 / OPERATIONS
+                </div>
+
+                <h3>
+                    IT Operations & Helpdesk
+                </h3>
+
+                <p>
+                    Manage technical tickets, prioritize
+                    incidents, document troubleshooting steps
+                    and support daily IT operations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EDUCATION + CERTIFICATIONS
+========================================================= -->
+
+<section
+    class="credentials"
+    id="credentials"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                EDUCATION & CERTIFICATIONS
+            </div>
+
+
+            <h2>
+                Academic Background
+            </h2>
+
+
+            <p>
+                Formal education and certifications supporting
+                my professional background.
+            </p>
+
+        </div>
+
+
+
+        <div class="credentials-grid">
+
+
+            <!-- EDUCATION -->
+
+            <div class="credential-box reveal">
+
+                <h3>
+                    Education
+                </h3>
+
+
+                <div class="education-item">
+
+                    <strong>
+                        Bachelor of Science in Information Technology
+                    </strong>
+
+                    <span>
+                        AMA Computer College
+                    </span>
+
+                    <span class="education-year">
+                        January 2017 – 2019
+                    </span>
+
+                </div>
+
+
+
+                <div class="education-item">
+
+                    <strong>
+                        Bachelor of Science in Computer Science
+                    </strong>
+
+                    <span>
+                        Systems Plus Computer College
+                    </span>
+
+                    <span class="education-year">
+                        June 2012 – May 2014
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CERTIFICATIONS -->
+
+            <div class="credential-box reveal">
+
+                <h3>
+                    Certifications
+                </h3>
+
+
+                <ul class="cert-list">
+
+
+                    <li>
+
+                        <span class="cert-icon">
+                            ✓
+                        </span>
+
+                        CompTIA A+ Core 1
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="cert-icon">
+                            ✓
+                        </span>
+
+                        CompTIA Network+
+
+                    </li>
+
+
+                    <li>
+
+                        <span class="cert-icon">
+                            ✓
+                        </span>
+
+                        ITIL 4 Foundation
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="container">
+
+
+        <div class="contact-card reveal">
+
+
+            <h2>
+                Let's Work Together
+            </h2>
+
+
+            <p>
+                Looking for a reliable Administrative & IT Support
+                professional who can streamline workflows, manage CRM systems,
+                and keep day-to-day operations running smoothly?
+            </p>
+
+
+
+            <div class="contact-details">
+
+
+                <div class="contact-item">
+
+                    📧
+
+                    <a
+                        href="mailto:bryandavidpedro1995@gmail.com"
+                    >
+                        bryandavidpedro1995@gmail.com
+                    </a>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    📱
+
+                    <a
+                        href="tel:+639506991805"
+                    >
+                        +63 950 699 1805
+                    </a>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    📍
+
+                    San Tomas, Pampanga, Philippines
+
+                </div>
+
+            </div>
+
+
+
+            <a
+                href="mailto:bryandavidpedro1995@gmail.com"
+                class="btn btn-primary"
+            >
+                Send Me an Email →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        ©
+        <span id="year"></span>
+
+        <strong>
+            Bryan Pedro
+        </strong>
+
+        · Administrative Assistant & IT Specialist
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    class="top-button"
+    id="topButton"
+    aria-label="Back to top"
+>
+
+    ↑
+
+</button>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle("open");
+
+
+            if (
+                navLinks.classList.contains("open")
+            ) {
+
+                menuBtn.textContent = "×";
+
+            } else {
+
+                menuBtn.textContent = "☰";
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU
+    ========================================================= */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove(
+                        "open"
+                    );
+
+                    menuBtn.textContent = "☰";
+
+                }
+            );
+
+        });
+
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "active"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const topButton =
+        document.getElementById("topButton");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (
+                window.scrollY > 500
+            ) {
+
+                topButton.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                topButton.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    topButton.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+
+    /* =========================================================
+     CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("year")
+        .textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       DOWNLOAD CV CHECK
+    ========================================================= */
+
+    const downloadCV =
+        document.querySelector(".download-btn");
+
+
+    if (downloadCV) {
+
+        downloadCV.addEventListener(
+            "click",
+            function(event) {
+
+                const cvFile =
+                    "./Bryan-Pedro-CV.pdf";
+
+                console.log(
+                    "Downloading:",
+                    cvFile
+                );
+
+            }
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
